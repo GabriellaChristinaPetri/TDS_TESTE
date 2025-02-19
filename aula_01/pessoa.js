@@ -8,28 +8,44 @@
 const pessoas = [];
 var idSeq = 1;
 
-function cadastraPessoa(nome, idade)
-{
-    var pessoa = {id : idSeq++, nome: nome, idade: idade}
+function cadastraPessoa(nome, idade) {
+    var pessoa = { id: idSeq++, nome: nome, idade: idade }
     pessoas.push(pessoa);
     return pessoa;
 };
 
-function deletaPessoa (id)
-{
-    const pessoa = {id: id}
-    cons
-    pessoas.splice(pessoa);
-    return pessoa;
-}
+function deletaPessoa(id) {
+    for (let i = 0; i < pessoas.length; i++) {
+        if (pessoas[i].id == id) {
+            console.log(pessoas[i]);
+            pessoas.splice(i, 1);
+        };
+    };
 
-function listaTodasAsPessoas()
-{
+    //forma "clean de executar o código nas normas e meios JavaScript"
+    
+    /*const inicio = pessoas.filter((item, index) => {
+        if (item.id == id) {
+            return index;
+        }
+    });
+
+    if (inicio.length <= 0) {
+        return "codigo invalido";
+    }
+    else {
+        pessoas.splice(inicio, 1);
+        return "deletado com sucesso";
+    };*/
+};
+
+function listaTodasAsPessoas() {
     return pessoas;
 };
 
-module.exports = 
+module.exports =
 {
     cadastraPessoa,
-    listaTodasAsPessoas
+    listaTodasAsPessoas,
+    deletaPessoa
 }

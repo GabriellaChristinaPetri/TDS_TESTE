@@ -17,4 +17,10 @@ console.log(pessoa.listaTodasAsPessoas());
 
 pessoa.deletaPessoa(3);
 
+console.log(pessoa.consultaPessoaID(4));
+
+pessoa.atualizaPessoa(1, "AaA", 20);
+
+console.log(pessoa.consultaPessoaID(1));
+
 console.log(pessoa.listaTodasAsPessoas());

@@ -1,5 +1,7 @@
 //soma de dois valores
-/*
+
+const { soma } = require("../aula_02");
+
 function somaDeDoisValores(a, b)
 {
     return a + b;
@@ -26,10 +28,10 @@ function divDeDoisValores(a, b)
 };
 
 console.log(divDeDoisValores(10, 2));
-*/
+
 
 //trabalhando com array list
-/*
+
 const data = []
 
 data.push(1);
@@ -41,7 +43,7 @@ data.push(6);
 
 data.splice(4,1);
 
-console.log(data);*/
+console.log(data);
 
 //utilizando objetos no js
 
@@ -54,3 +56,8 @@ const pessoa = {
 console.log(pessoa);
 console.log(pessoa.nome);
 
+module.exports = {
+    somaDeDoisValores,
+    divDeDoisValores,
+    multiDeDoisValores
+}

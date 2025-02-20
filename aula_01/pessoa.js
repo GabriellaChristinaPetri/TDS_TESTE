@@ -23,7 +23,7 @@ function deletaPessoa(id) {
     };
 
     //forma "clean de executar o código nas normas e meios JavaScript"
-    
+
     /*const inicio = pessoas.filter((item, index) => {
         if (item.id == id) {
             return index;
@@ -39,6 +39,20 @@ function deletaPessoa(id) {
     };*/
 };
 
+function consultaPessoaID(id) {
+    return pessoas.filter(item => item.id == id);
+}
+
+function atualizaPessoa(id, nome, idade) {
+    for (let i = 0; i < pessoas.length; i++) {
+        if (pessoas[i].id == id) {
+            pessoas[i].nome = nome;
+            pessoas[i].idade = idade;
+            return pessoas[i];
+        };
+    };
+}
+
 function listaTodasAsPessoas() {
     return pessoas;
 };
@@ -47,5 +61,7 @@ module.exports =
 {
     cadastraPessoa,
     listaTodasAsPessoas,
-    deletaPessoa
+    deletaPessoa,
+    consultaPessoaID,
+    atualizaPessoa
 }
